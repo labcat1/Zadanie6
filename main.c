@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 #define max 100
 bool theInput(int* array, int size) {
    int temp = 0;
@@ -64,11 +65,15 @@ int main(void) {
       printf("Your array is too big!");
    }
    else {
-      int array[size];
+      int* array = (int*)malloc(size*sizeof(int));
+      if (array == 0) {
+         printf("ERROR: COULDN'T ALLOCATE MEMORY");
+      }
       theInput(array, size);
       printf("Maxinum:%d", Max(array, size));
       printf("\nMinimum:%d", Min(array, size));
       printf("\nMean:%f", Mean(array, size));
       printf("\nRMS:%f", RMS(array, size));
+      free(array);
    }
 }
