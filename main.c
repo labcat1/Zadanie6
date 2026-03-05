@@ -67,10 +67,8 @@ int main(void) {
       int array[MAXIM];
 
       if (size == 0) {
-         printf("\nMaxinum:0");
-         printf("\nMinimum:0");
-         printf("\nMean:0");
-         printf("\nRMS:0");
+         printf("Array is empty");
+
       }
       else{
          theInput(array, size);
